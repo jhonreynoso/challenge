@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NbMenuModule, NbSidebarModule, NbThemeModule } from '@nebular/theme';
+import { LayoutModule } from './features/layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +13,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NoopAnimationsModule,
+    LayoutModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbSidebarModule.forRoot(),
+    NbMenuModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,18 @@
+input {
+    display: flex;
+    margin:5px;
+}
+
+.columns {
+    width: 100%;
+    display:flex;
+    width: calc(100% / 3);
+}
+
+.input-container {
+    display:flex;
+    padding: 5px;
+    > label {
+        margin: 10px;
+    }
+}

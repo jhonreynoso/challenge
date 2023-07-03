@@ -1,0 +1,82 @@
+<span> Add Player </span>
+<hr>
+<form [formGroup]="form" (ngSubmit)="saveForm()" validate>
+    <div class="columns">
+        <div class="input-container">
+            <label>
+                <span>
+                    {{label.ID}}
+                </span>
+                <input type="text" nbInput [placeholder]="label.ID" [formControlName]="statsEntity.ID">
+            </label>
+
+        </div>
+
+        <div class="input-container">
+            <label>
+                <span> {{label.FIRST_NAME}}</span>
+                <input type="text" nbInput [placeholder]="label.FIRST_NAME" [formControlName]="statsEntity.FIRST_NAME">
+            </label>
+
+        </div>
+        <div class="input-container">
+            <label>
+                <span>
+                    {{label.LAST_NAME}}
+                </span>
+                <input type="text" nbInput [placeholder]="label.LAST_NAME" [formControlName]="statsEntity.LAST_NAME">
+            </label>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="input-container">
+            <label>
+                <span>
+                    {{label.POINTS_PER_GAME}}
+                </span>
+                <input type="text" nbInput [placeholder]="label.POINTS_PER_GAME"
+                    [formControlName]="statsEntity.POINTS_PER_GAME">
+            </label>
+
+        </div>
+        <div class="input-container">
+            <label>
+                <span>
+                    {{label.ASSISTS_PER_GAME}}
+                </span>
+                <input type="text" nbInput [placeholder]="label.ASSISTS_PER_GAME"
+                    [formControlName]="statsEntity.ASSISTS_PER_GAME">
+            </label>
+        </div>
+        <div class="input-container">
+            <label>
+                <span>
+                    {{label.REBOUNDS_PER_GAME}}
+                </span>
+                <input type="text" nbInput [placeholder]="label.REBOUNDS_PER_GAME"
+                    [formControlName]="statsEntity.REBOUNDS_PER_GAME">
+            </label>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="input-container">
+            <label>
+                <span>
+                    {{label.POSITION}}
+                </span>
+                <br>
+                <nb-select placeholder="Select Showcase" [placeholder]="label.POSITION"
+                    [formControlName]="statsEntity.POSITION">
+                    <nb-option *ngFor="let option of positions " [value]="option">{{option}}</nb-option>
+                </nb-select>
+            </label>
+            <label>
+                <span>
+                    Save
+                </span>
+                <button type="submit" nbButton status="primary" [disabled]="form.invalid">Save</button>
+            </label>
+        </div>
+
+    </div>
+</form>
